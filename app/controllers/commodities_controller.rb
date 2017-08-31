@@ -5,6 +5,11 @@ class CommoditiesController < ApplicationController
     @commodities = Commodity.all
   end
 
+  def dashboard
+    @commodities = Commodity.all
+    @fetch_times = @commodities.first.prices.recent.map(&:fetch_time) if @commodities.any?
+  end
+
   def new
     @commodity = Commodity.new
   end
