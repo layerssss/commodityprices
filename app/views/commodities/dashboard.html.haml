@@ -4,7 +4,7 @@
   = table_for @commodities, table_html: { class: 'table' } do |t|
     = t.column :yahoo_symbol 
     - @fetch_times.each_with_index do |fetch_time, fetch_time_index|
-      = t.column fetch_time.to_s(:short) do |commodity|
+      = t.column fetch_time.getlocal.strftime('%D %T') do |commodity|
         = commodity.prices.recent[fetch_time_index].try(&:last_price)
 
 %p
@@ -12,4 +12,4 @@
 %p Capture errors
 %hr
 - @capture_errors.each do |capture_error|
-  %p #{capture_error.created_at.to_s(:long)}: #{capture_error.message}
+  %p #{capture_error.created_at.getlocal.to_s(:long)}: #{capture_error.message}
