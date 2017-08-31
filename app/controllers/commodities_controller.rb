@@ -18,6 +18,10 @@ class CommoditiesController < ApplicationController
     @capture_errors = CaptureError.order(created_at: :desc).first(5)
   end
 
+  def capture_now
+    CaptureJob.perform_later
+  end
+
   def new
     @commodity = Commodity.new
   end

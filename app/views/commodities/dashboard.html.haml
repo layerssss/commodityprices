@@ -6,6 +6,9 @@
     - @fetch_times.each_with_index do |fetch_time, fetch_time_index|
       = t.column fetch_time.to_s(:short) do |commodity|
         = commodity.prices.recent[fetch_time_index].try(&:last_price)
+
+%p
+  = link_to 'Capture now', capture_now_commodities_path, method: :post, class: 'btn btn-info'
 %p Capture errors
 %hr
 - @capture_errors.each do |capture_error|
