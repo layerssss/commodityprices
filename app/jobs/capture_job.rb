@@ -3,7 +3,12 @@ class CaptureJob < ApplicationJob
 
   def perform
     puts 'Capturing...'
-    Commodity.capture_all!
-    puts 'Captured.'
+    begin
+      Commodity.capture_all!
+      puts 'Captured.'
+    rescue => e
+      puts "Capture error: #{e.message}"
+      CaptureError.create!(message: e.message)
+    end
   end
 end

@@ -7,7 +7,15 @@ class CommoditiesController < ApplicationController
 
   def dashboard
     @commodities = Commodity.all
-    @fetch_times = @commodities.first.prices.recent.map(&:fetch_time) if @commodities.any?
+
+    @fetch_times =
+      if @commodities.any?
+        @commodities.first.prices.recent.map(&:fetch_time)
+      else
+        []
+      end
+
+    @capture_errors = CaptureError.order(created_at: :desc).first(5)
   end
 
   def new
