@@ -12,6 +12,7 @@ class Commodity < ApplicationRecord
 
   validates_presence_of :yahoo_symbol
   validates_uniqueness_of :yahoo_symbol
+  validates_inclusion_of :yahoo_symbol, in: YAHOO_SYMBOLS
 
   has_many :prices, inverse_of: :commodity, dependent: :destroy
 
