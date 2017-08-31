@@ -1,0 +1,20 @@
+version: '3'
+services:
+  rails:
+    build: .
+    links:
+      - db
+    ports:
+      - "80"
+  db:
+    image: postgres:9.5
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_USER: commodityprices
+      POSTGRES_DB: commodityprices_production
+    volumes:
+      - 'pg_data:/var/lib/postgresql/data'
+    ports:
+      - '5432'
+volumes:
+  pg_data: {}

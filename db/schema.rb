@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831015320) do
+ActiveRecord::Schema.define(version: 20170831021238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20170831015320) do
     t.string "yahoo_symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "prices", force: :cascade do |t|
+    t.integer "commodity_id"
+    t.string "last_price"
+    t.datetime "fetch_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commodity_id"], name: "index_prices_on_commodity_id"
+    t.index ["fetch_time"], name: "index_prices_on_fetch_time"
   end
 
   create_table "site_configurations", force: :cascade do |t|

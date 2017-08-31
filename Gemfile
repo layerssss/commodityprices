@@ -11,6 +11,7 @@ gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'yql'
 
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
@@ -19,6 +20,7 @@ gem 'haml-rails'
 gem 'rails_bootstrap_navbar'
 gem 'rest-client'
 gem 'table-for'
+gem 'foreman'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'

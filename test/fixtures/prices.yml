@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  commodity_id: 1
+  last_price: MyString
+  fetch_time: 2017-08-31 14:12:38
+
+two:
+  commodity_id: 1
+  last_price: MyString
+  fetch_time: 2017-08-31 14:12:38
