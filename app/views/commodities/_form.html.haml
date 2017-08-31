@@ -1,0 +1,3 @@
+= bootstrap_form_for @commodity do |f|
+  = f.collection_select :yahoo_symbol, Commodity::YAHOO_SYMBOLS, :to_s, :to_s
+  = f.submit

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  capture_interval_seconds: 1
+  capturing: false
+
+two:
+  capture_interval_seconds: 1
+  capturing: false

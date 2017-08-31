@@ -1,0 +1,4 @@
+= bootstrap_form_for @site_configuration, url: site_configuration_path do |f|
+  = f.check_box :capturing
+  = f.number_field :capture_interval_seconds, label: 'Caputure interval (seconds)'
+  = f.submit
