@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: commodities
+#
+#  id           :integer          not null, primary key
+#  yahoo_symbol :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class Commodity < ApplicationRecord
   YAHOO_SYMBOLS = [
     'GC=F',
@@ -39,7 +49,7 @@ class Commodity < ApplicationRecord
 
     Commodity.all.each do |commodity|
       quote = quotes.find { |q| q.fetch('symbol') == commodity.yahoo_symbol }
-      throw new Error "quote for #{commodity.yahoo_symbol} not found." unless quote
+      raise "quote for #{commodity.yahoo_symbol} not found." unless quote
 
       new_prices.push(
         Price.new(

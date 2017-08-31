@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: reports
+#
+#  id         :integer          not null, primary key
+#  content    :text
+#  finished   :boolean          default(FALSE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Report < ApplicationRecord
   def self.append_line!(text)
     last_report = Report.order(created_at: :desc).first_or_create!

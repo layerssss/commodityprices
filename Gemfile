@@ -16,11 +16,11 @@ gem 'yql'
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
 gem 'bootswatch-rails'
+gem 'foreman'
 gem 'haml-rails'
 gem 'rails_bootstrap_navbar'
 gem 'rest-client'
 gem 'table-for'
-gem 'foreman'
 
 group :development, :test do
   gem 'capybara', '~> 2.13'
@@ -29,6 +29,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
