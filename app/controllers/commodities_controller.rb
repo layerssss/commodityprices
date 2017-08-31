@@ -20,6 +20,8 @@ class CommoditiesController < ApplicationController
 
   def capture_now
     CaptureJob.perform_later
+
+    redirect_to root_url, notice: 'The prices will be captured soon.'
   end
 
   def new
