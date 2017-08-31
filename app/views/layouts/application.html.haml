@@ -13,6 +13,7 @@
         = navbar_item 'Dashboard', root_path
         = navbar_item 'Magage Commodities', commodities_path
         = navbar_item 'Site Configuration', edit_site_configuration_path
+        = navbar_item 'Reports', reports_path
     .container-fluid
       - flash.each do |type, message|
         .alert{class: { alert: 'alert-danger', notice: 'alert-success' }[type.to_sym]}

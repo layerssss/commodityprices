@@ -50,6 +50,8 @@ class Commodity < ApplicationRecord
       )
     end
 
+    Report.append_line!(new_prices.map { |price| "'#{price.commodity.yahoo_symbol}': #{price.last_price}" }.join("; "))
+
     new_prices.each(&:save!)
   end
 end

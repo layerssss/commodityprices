@@ -1,0 +1,4 @@
+%h1 Reports
+- @reports.each do |report|
+  %p= report.created_at.getlocal.to_s(:long)
+  %pre= report.content
