@@ -9,7 +9,3 @@
 
 * get docker, docker-compose
 * docker-compose up --build
-
-# Live demo
-
-[https://commodityprices.micy.in/](https://commodityprices.micy.in/)
